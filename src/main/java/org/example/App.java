@@ -2,6 +2,8 @@ package org.example;
 
 
 
+
+
 public class App {
 
     // METODO QUE RECIBE UN OBJETO COMO PARAMETRO Y MUESTRA DETALLES DE DICHO OBJETO
@@ -34,5 +36,29 @@ public class App {
             imprimeDetalles(book3);
             imprimeDetalles(book4);
 
+
+        /**
+         * LOS PATRONES RECORD TAMBIEN PUEDEN ESTAR ANIDADOS, ES DECIR,
+         * UN RECORD PUEDE CONTENER OTRO RECORD COMO UNO DE SUS COMPONENTES,
+         * Y SE PUEDE DESESTRUCTURAR AMBOS NIVELES DE RECORDS EN UNA SOLA SENTENCIA IF CON INSTANCEOF.
+         *
+         *  POR EJEMPLO:
+         *
+         */
+
+        Library libreria = Library.builder()
+                .nombre ("Biblioteca Central")
+                .bestSeller(Book.builder()
+                        .title("The Great Gatsby")
+                        .author("F. Scott Fitzgerald")
+                        .build()
+        )
+        .build();
+            if (libreria instanceof Library(String nombre, Book bestSeller)) {
+                System.out.println("Nombre de la biblioteca: " + nombre);
+                System.out.println("Best Seller: " + bestSeller.title() + " por " + bestSeller.author());
+            } else {
+                System.out.println("El objeto no es una biblioteca.");
+            }
     }
 }

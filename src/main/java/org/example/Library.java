@@ -3,5 +3,6 @@ package org.example;
 import lombok.Builder;
 
 @Builder
-public record Book(String title, String author) {
+public record Library(String nombre, Book bestSeller) {
+
 }
